@@ -1,0 +1,238 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: "Microsoft JhengHei";
+    background-color: #FAFAFA;
+    --num: 7;
+    --width: calc(100/var(--num));
+}
+
+/* ----------------------------------------------------------- */
+/* Zoom card */
+.zoom_card{
+    margin: auto;
+    width: 60%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+    padding: 2% 5%;
+}
+.zoom_card .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.zoom_card .house_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    margin: 0 5%;
+}
+.zoom_card img.house{
+    width: 100%;
+}
+.zoom_card .task_name{
+    position: absolute;
+    /* bottom: 1%;
+    left: 0;
+    right: 0;
+    margin: auto; */
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 25%;
+    text-align: center;
+}
+.zoom_card .task_name .detail{
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    color: #ADADAD;
+}
+
+
+/* Remain 剩餘時間顯示 */
+.remain{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #ADADAD
+}
+.remain span{
+    font-size: 30px;
+    padding: 0 15px;
+    color: black;
+}
+
+/* ----------------------------------------------------------- */
+/* Schedule 時間表 */
+/* .schedule{
+    height: 140px; 
+} */
+
+/* 每個任務(外層) */
+.task{
+    text-align: center;
+}
+.num_1{
+    width: calc(var(--width)*1%);
+}
+.num_2{
+    width: calc(var(--width)*2%);
+}
+.num_3{
+    width: calc(var(--width)*3%);
+}
+.num_4{
+    width: calc(var(--width)*4%);
+}
+.num_5{
+    width: calc(var(--width)*5%);
+}
+
+/* 任務：icon(房子、小人、龍龍、叉叉) */
+.task .icon{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.task img.house{
+    width: calc((100/var(--num))*0.3vw);
+}
+/* 除了房子之外的圖片 */
+.task img:not(.house){
+    position: absolute;
+    width: calc((100/var(--num))*0.15vw);
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.task img.boy{
+    width: calc((100/var(--num))*0.11vw);
+}
+.task img.monster{
+    width: calc((100/var(--num))*0.18vw);
+}
+/* .task img.monster{
+    position: absolute;
+    width: 20%;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.task img.cross{
+    position: absolute;
+    width: 20%;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}*/
+
+/* 任務：進度條 */
+.progress{
+    height: 15px;
+    margin-top: 12px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.active{
+    box-shadow: 0px 0px 10px 5px #F9AC19;
+}
+.progress.next_active{
+    box-shadow: 0px 0px 10px yellow;
+}
+.work .progress{
+    /* background-color: rgb(168, 204, 214); */
+    border: 1px solid #83AFB7;
+    
+}
+.play .progress{
+    /* background-color: rgb(255, 172, 125); */
+    border: 1px solid #D9A384;
+}
+
+/* 執行中的進度顯示 */
+.work .progress-bar{
+    background-color: #83AFB7;
+}
+.play .progress-bar{
+    background-color: #D9A384;
+}
+.progress-bar.delay{
+    background-color: rgb(218, 63, 16);
+}
+
+/* 任務：任務名稱 */
+.task .task_name{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    text-align: left;
+}
+.task .task_name .time, .task .task_name .detail{
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+    color: #ADADAD;
+}
+
+
+
+
+/* ----------------------------------------------------------- */
+/* Click 按鈕 */
+.click{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    flex-wrap: wrap;
+}
+.click .btn{
+    font-weight: bold;
+    border-radius: 100px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+    margin:5px;
+}
+.start.btn{
+    border: 2px solid #F9AC19;
+    background-color: #F9AC19;
+    display: none;
+}
+.finish.btn{
+    /* background-color: #fff; */
+    color: #707070;
+    border: 2px solid #707070;
+}
+.pass.btn{
+    /* position: absolute; */
+    /* right: 0; */
+    border: 2px solid #fff;
+    background-color: #fff;
+}
+
+/* .home.btn{
+    visibility: hidden;
+} */
+
+/* ----------------------------------------------------------- */
+/* Modal 彈跳視窗 */
+/* 改 */
+.modal-title, .modal-body, .modal-footer{
+    text-align: center;
+    margin: auto;
+}
+.modal-footer .btn{
+    font-size: 20px;
+}
+.modal img{
+    width: 40px;
+}
